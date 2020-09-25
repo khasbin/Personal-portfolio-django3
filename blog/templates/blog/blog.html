@@ -1,11 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang = "eng">
     <head>
         <meta charset = "utf-8">
         <title>Blog section </title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        <style>
+        </style>
     </head>
     <body>
+        <div class = "continer-fluid">
         <h1 class = "jumbotron text-center">Blog section</h1>
         <h3 class = "text-center">Asbin has written numbers of blogs</h3>
         <br>
@@ -15,5 +19,6 @@
         <h3 class = "tex=left text-primary ml-5 mr-5">{{a.date}}</h3>
         <p class = "strong ml-5 mr-5 pr-5">{{a.description}}</p>
         {% endfor %}
+    </div>
     </body>
 </html>
