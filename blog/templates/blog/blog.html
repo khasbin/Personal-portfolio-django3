@@ -9,16 +9,16 @@
         </style>
     </head>
     <body>
-        <div class = "continer-fluid">
+        <div class = "container-fluid">
         <h1 class = "jumbotron text-center">Blog section</h1>
         <h3 class = "text-center">Asbin has written numbers of blogs</h3>
         <br>
         <br>
         {% for a in contexts %}
-        <h2 class = "text-left text-success ml-5 mr-5 pr-5">{{a.title}}</h2>
+        <a href = "{% url 'blog:detail' a.id %}"><h2 class = "text-left text-success ml-5 mr-5 pr-5">{{a.title}}</h2></a>
         <h3 class = "tex=left text-primary ml-5 mr-5">{{a.date}}</h3>
         <p class = "strong ml-5 mr-5 pr-5">{{a.description}}</p>
         {% endfor %}
-    </div>
+         </div>
     </body>
 </html>
