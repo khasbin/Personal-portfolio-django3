@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="eng">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+            integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+        <style>
+            .back1 {
+                background: url({% static 'portfolio/background.jpg'%}) no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container-fluid container-lg container-md container-sm">
+            <nav class="navbar nav navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-dark bg-dark">
+                <a class="navbar-brand" href="{%url 'home' %}">Asbin</a>
+                <button class="navbar-toggler" data-toggle="collapse" type="button" data-target="#navcollpase">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navcollpase">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a href="{% url 'blog:all_blogs' %}" class="nav-link btn btn-success">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.linkedin.com/in/asbin-khatiwada-21433aa2/" target="_blank"
+                                class="nav-link">LinkedIn</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.instagram.com/asbinkhatiwada/" target="_blank"
+                                class="nav-link">Instagram</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://twitter.com/Asbinkhatiwada" target="_blank" class="nav-link">Twitter</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="back1">
+                {% block content %}
+                {% endblock %}
+            </div>
+            {%block body%}
+            {% endblock %}
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+            integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>

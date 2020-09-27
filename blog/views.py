@@ -4,8 +4,9 @@ from .models import Blog
 # Create your views here.
 
 def all_blogs(request):
+    counting = Blog.objects.all()
     context = Blog.objects.order_by('-date')[:4]
-    return render(request, 'blog/blog.html',{'contexts':context})
+    return render(request, 'blog/blog.html',{'contexts':context, 'counting':counting})
 
 
 def details(request,blog_id):

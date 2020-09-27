@@ -1,24 +1,16 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang = "eng">
-    <head>
-        <meta charset = "utf-8">
-        <title>Blog section </title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-        <style>
-        </style>
-    </head>
-    <body>
-        <div class = "container-fluid">
-        <h1 class = "jumbotron text-center">Blog section</h1>
-        <h3 class = "text-center">Asbin has written numbers of blogs</h3>
-        <br>
-        <br>
-        {% for a in contexts %}
-        <a href = "{% url 'blog:detail' a.id %}"><h2 class = "text-left text-success ml-5 mr-5 pr-5">{{a.title}}</h2></a>
-        <h3 class = "tex=left text-primary ml-5 mr-5">{{a.date}}</h3>
-        <p class = "strong ml-5 mr-5 pr-5">{{a.description}}</p>
-        {% endfor %}
-         </div>
-    </body>
-</html>
+{% extends 'portfolio/base.html' %}
+{% block body %}
+<div class="container-fluid">
+    <h1 class="jumbotron text-center">Blog section</h1>
+    <h3 class="text-center">Asbin has written <span>{{contexts.count}}</span> numbers of
+        blog{{counting.count|pluralize}}</h3>
+    <br>
+    {% for a in contexts %}
+    <a href="{% url 'blog:detail' a.id %}">
+        <h2 class="text-left text-success ">{{a.title}}</h2>
+    </a>
+    <h6 class="text-left text-primary">{{a.date|date:'j M Y'}}</h6>
+    <p class="strong">{{a.description|truncatechars:50|safe}}</p>
+    {% endfor %}
+</div>
+{% endblock %}
