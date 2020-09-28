@@ -1,4 +1,7 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
 <h1>{{ thing.title }}</h1>
 <p>
-{{thing.description}}
+{{thing.description|safe|escape}}
 </p>
+{% endblock %}

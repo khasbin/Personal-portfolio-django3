@@ -1,0 +1,18 @@
+{% extends 'portfolio/base.html' %}
+{% block body %}
+{% load static %}
+
+<form action = "{% url 'contact' %}"  method = "POST">
+    {% csrf_token %}
+   <label for = "na_me">Name: </label>
+   <input type = "text" name = "name" id = "na_me" class = "form-control">
+   <label for = "em_ail">Email: </label>
+   <input type = "text" name = "email" id = "em_ail" class = "form-control">
+   <label for = "mess_age">Message:  </label>
+   <input type = "text" name = "message"  id = "mess_age"class = "form-control">
+   <input type = "submit" class = "btn btn-primary" id = "submitted" name = "submit" />
+</form>
+<br>
+<h3 class = "strong" id = "clicked"> </h3>
+<script src = "{% static 'portfolio/contact.js' %}"></script>
+{% endblock %}

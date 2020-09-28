@@ -6,11 +6,12 @@
         blog{{counting.count|pluralize}}</h3>
     <br>
     {% for a in contexts %}
-    <a href="{% url 'blog:detail' a.id %}">
+    <a href="{% url 'blog:detail' a.id %}" target = '_blank'>
         <h2 class="text-left text-success ">{{a.title}}</h2>
     </a>
     <h6 class="text-left text-primary">{{a.date|date:'j M Y'}}</h6>
-    <p class="strong">{{a.description|truncatechars:50|safe}}</p>
+    <p class="strong">{{a.description|safe|escape|truncatechars:50}}</p>
     {% endfor %}
 </div>
 {% endblock %}
+ 
